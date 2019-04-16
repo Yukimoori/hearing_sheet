@@ -1,0 +1,107 @@
+<h2>ヒアリングシート</h2>
+<p>全てにチェックをいれてください。</p>
+
+  <%= form_for @page do |f| %>
+
+    <div class="form-group">
+      <%= f.label :企業名, class: "text-white" %>
+      <%= f.text_area :companyname, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :施策のご希望, class: "text-white" %>
+        <%= f.radio_button :tool, :training %>
+        <%= f.label :研修 %>
+        <%= f.radio_button :tool, :schooling %>
+        <%= f.label :スクーリング %>
+        <%= f.radio_button :tool, :correspondence %>
+        <%= f.label :通信 %>
+        <%= f.radio_button :tool, :text %>
+        <%= f.label :教材提供 %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :対象者, class: "text-white" %>
+        <%= f.radio_button :property, :nominee %>
+        <%= f.label :内定者 %>
+        <%= f.radio_button :property, :newemloyer %>
+        <%= f.label :新入社員 %>
+        <%= f.radio_button :property, :employer %>
+        <%= f.label :社員 %>
+        <%= f.radio_button :property, :other %>
+        <%= f.label :その他 %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :対象人数, class: "text-white" %>
+      <%= f.number_field :people, class: "form-control" %>名
+    </div>
+
+    <div class="form-group">
+      <%= f.label :合格目標, class: "text-white" %>
+      <%= f.number_field :goal, class: "form-control" %>%
+    </div>
+
+    <div class="form-group">
+      <%= f.label :予算, class: "text-white" %>
+      <%= f.number_field :budget, class: "form-control" %>万円
+    </div>
+
+    <div class="form-group">
+      <%= f.label :開始月, class: "text-white" %>
+      <%= f.number_field :start, class: "form-control" %>月
+    </div>
+
+    <div class="form-group">
+      <%= f.label :実施曜日, class: "text-white" %>
+      <%= f.radio_button :weekday, :mon %>
+      <%= f.label :月 %>
+      <%= f.radio_button :weekday, :tue %>
+      <%= f.label :火 %>
+      <%= f.radio_button :weekday, :wed %>
+      <%= f.label :水 %>
+      <%= f.radio_button :weekday, :tur %>
+      <%= f.label :木 %>
+      <%= f.radio_button :weekday, :fri %>
+      <%= f.label :金 %>
+      <%= f.radio_button :weekday, :sat %>
+      <%= f.label :土 %>
+      <%= f.radio_button :weekday, :sun %>
+      <%= f.label :日 %>
+    </div>
+
+
+    <div class="form-group">
+      <%= f.label :受験有無, class: "text-white" %>
+      <%= f.radio_button :examination, :true %>
+      <%= f.label :有 %>
+      <%= f.radio_button :examination, :false %>
+      <%= f.label :無 %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :取得支援, class: "text-white" %>
+      <%= f.radio_button :aid, :nothing %>
+      <%= f.label :なし %>
+      <%= f.radio_button :aid, :aidtraining %>
+      <%= f.label :研修（社内・外） %>
+      <%= f.radio_button :aid, :incentive %>
+      <%= f.label :報奨金 %>
+      <%= f.radio_button :aid, :support %>
+      <%= f.label :取得補助 %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :昨年合格率, class: "text-white" %>
+      <%= f.number_field :lastpassrate, class: "form-control" %>%
+    </div>
+
+    <div class="form-group">
+      <%= f.label :その他, class: "text-white" %>
+      <%= f.text_area :others, class: "form-control" %>
+    </div>
+
+    <%= f.submit "送信", class: "btn-block btn-white" %>
+  <% end %>
+
+<%= button_to '一覧',pages_index_path,method: :get %>
