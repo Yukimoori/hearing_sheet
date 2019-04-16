@@ -49,6 +49,8 @@ test:
 #
 production:
   <<: *default
-  database: hearing_sheet_production
-  username: hearing_sheet
-  password: <%= ENV['HEARING_SHEET_DATABASE_PASSWORD'] %>
+  # database: hearing_sheet_production
+  # username: hearing_sheet
+  # password: <%= ENV['HEARING_SHEET_DATABASE_PASSWORD'] %>
+  adapter: mysql2
+  pool: 5
