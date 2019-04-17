@@ -1,12 +1,14 @@
 <div class="table-responsive">
+  <div class="text-center">
    <table class="table table-striped">
 
     <h1>index</h1>
+
       <thead>
         <tr>
           <th>No.</th>
           <th>企業名</th>
-          <th>施策の希望</th>
+          <th>施策のご希望</th>
           <th>対象者</th>
           <th>対象人数</th>
           <th>合格目標</th>
@@ -68,18 +70,6 @@
               <td><%= "日" %></td>
             <% end %>
 
-            <td><%= page.examination %>%</td>
-
-            <% if page.nothing? %>
-              <td><%= "なし" %></td>
-            <% elsif page.aidtraining? %>
-              <td><%= "研修" %></td>
-            <% elsif page.incentive? %>
-              <td><%= "報奨金" %></td>
-            <% elsif page.support? %>
-              <td><%= "取得補助" %></td>
-            <% end %>
-
 
             <% if page.true? %>
               <td><%= "有" %></td>
@@ -87,11 +77,21 @@
               <td><%= "無" %></td>
             <% end %>
 
+            <% if page.nothing? %>
+            <td><%= "なし" %></td>
+            <% elsif page.aidtraining? %>
+            <td><%= "研修" %></td>
+            <% elsif page.incentive? %>
+            <td><%= "報奨金" %></td>
+            <% elsif page.support? %>
+            <td><%= "取得補助" %></td>
+            <% end %>
+
             <td><%= page.lastpassrate %>%</td>
             <td><%= page.others %></td>
 
             <% if page.yet? %>
-              <td><%= button_to "未着手" ,page_path(id: page.id), method: :patch %></td>
+              <td><%= button_to "確認" ,page_path(id: page.id), method: :patch %></td>
             <% else %>
               <td><%= "〇" %></td>
             <% end %>
@@ -100,5 +100,6 @@
         </tbody>
       <% end %>
     </table>
+  </div>
   <%= button_to '作成',root_path,method: :get %>
 </div>

@@ -51,8 +51,11 @@ test:
 #
 production:
   <<: *default
-  # database: hearing_sheet_production
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: hearing_sheet_production
   # username: hearing_sheet
   # password: <%= ENV['HEARING_SHEET_DATABASE_PASSWORD'] %>
-  adapter: mysql2
-  pool: 5
+  # adapter: mysql2
+  # pool: 5
