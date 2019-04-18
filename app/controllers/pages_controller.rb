@@ -10,9 +10,9 @@ class PagesController < ApplicationController
   def create
    @page = Page.new(page_params)
    if @page.save
-     redirect_to pages_index_path, success: '成功しました'
+     redirect_to pages_index_path, success: '登録しました'
    else
-     flash.now[:danger] = "失敗しました"
+     flash.now[:danger] = "記入に不備があります"
      render :new
    end
   end

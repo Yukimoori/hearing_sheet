@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_04_14_002651) do
     t.integer "budget"
     t.integer "start"
     t.integer "weekday", default: 0
-    t.integer "examination"
+    t.integer "examination", default: 0
     t.integer "aid", default: 0
     t.integer "lastpassrate"
     t.string "others"
