@@ -11,6 +11,10 @@ class Page < ApplicationRecord
   validates :aid , presence: true
   validates :lastpassrate , presence: true
 
+  validates :goal, inclusion: { in: 0..100 }
+  validates :start, inclusion: { in: 1..12 }
+  validates :lastpassrate, inclusion: { in: 0..100 }
+
   enum tool: { training: 0, schooling: 1, correspondence: 2, text: 3}
   enum property: { nominee: 0, newemloyer: 1, employer: 2, other: 3}
   enum weekday: { mon: 0, tue: 1, wed: 2, tur: 3, fri: 4, sat: 5, sun: 6}
