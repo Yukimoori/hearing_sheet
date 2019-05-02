@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+
   def index
     @pages = Page.all
   end
@@ -8,6 +9,7 @@ class PagesController < ApplicationController
   end
 
   def create
+    # binding.pry
    @page = Page.new(page_params)
    if @page.save
      redirect_to pages_index_path, success: '登録しました'
@@ -24,9 +26,9 @@ class PagesController < ApplicationController
 end
 
 
+  # 配列は末尾に
    private
    def page_params
-     params.require(:page).permit(:companyname,:tool,:property,:people,:goal,:budget,:start,:weekday,:examination,:aid,:lastpassrate,:others)
+     params.require(:page).permit(:companyname,:people,:goal,:budget,:start,:examination,:lastpassrate,:others,tool: [],property:[],weekday:[],aid:[])
    end
-
 end

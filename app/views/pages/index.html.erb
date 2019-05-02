@@ -28,65 +28,21 @@
           <tr>
             <td><%= page.id %></td>
             <td><%= page.companyname %></td>
-
-            <% if page.training? %>
-              <td><%= "研修" %></td>
-            <% elsif page.schooling? %>
-              <td><%= "通学" %></td>
-            <% elsif page.correspondence? %>
-              <td><%= "通信" %></td>
-            <% else %>
-              <td><%= "教材提供" %></td>
-            <% end %>
-
-            <% if page.nominee? %>
-              <td><%= "内定者" %></td>
-            <% elsif page.newemloyer? %>
-              <td><%= "新入社員" %></td>
-            <% elsif page.employer? %>
-              <td><%= "社員" %></td>
-            <% else %>
-              <td><%= "その他" %></td>
-            <% end %>
-
+            <td><%= page.tool %></td>
+            <td><%= page.property %></td>
             <td><%= page.people %>名</td>
             <td><%= page.goal %>%</td>
             <td><%= page.budget %>万円</td>
             <td><%= page.start %>月</td>
-
-            <% if page.mon? %>
-              <td><%= "月" %></td>
-            <% elsif page.tue? %>
-              <td><%= "火" %></td>
-            <% elsif page.wed? %>
-              <td><%= "水" %></td>
-            <% elsif page.tur? %>
-              <td><%= "木" %></td>
-            <% elsif page.fri? %>
-              <td><%= "金" %></td>
-            <% elsif page.sat? %>
-              <td><%= "土" %></td>
-            <% else %>
-              <td><%= "日" %></td>
-            <% end %>
-
+            <td><%= page.weekday %></td>
 
             <% if page.true? %>
-              <td><%= "有" %></td>
+            <td><%= "有" %></td>
             <% elsif page.false? %>
-              <td><%= "無" %></td>
+            <td><%= "無" %></td>
             <% end %>
 
-            <% if page.nothing? %>
-            <td><%= "なし" %></td>
-            <% elsif page.aidtraining? %>
-            <td><%= "研修" %></td>
-            <% elsif page.incentive? %>
-            <td><%= "報奨金" %></td>
-            <% elsif page.support? %>
-            <td><%= "取得補助" %></td>
-            <% end %>
-
+            <td><%= page.aid %></td>
             <td><%= page.lastpassrate %>%</td>
             <td><%= page.others %></td>
 

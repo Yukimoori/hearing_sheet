@@ -14,15 +14,15 @@ ActiveRecord::Schema.define(version: 2019_04_14_002651) do
 
   create_table "pages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "companyname"
-    t.integer "tool", default: 0
-    t.integer "property", default: 0
+    t.string "tool"
+    t.string "property"
     t.integer "people"
     t.integer "goal"
     t.integer "budget"
     t.integer "start"
-    t.integer "weekday", default: 0
+    t.string "weekday"
     t.integer "examination", default: 0
-    t.integer "aid", default: 0
+    t.string "aid"
     t.integer "lastpassrate"
     t.string "others"
     t.integer "status", default: 0

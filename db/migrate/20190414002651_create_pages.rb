@@ -3,15 +3,15 @@ class CreatePages < ActiveRecord::Migration[5.2]
     create_table :pages do |t|
 
       t.string :companyname
-      t.integer:tool, default: 0
-      t.integer:property, default: 0
+      t.string:tool
+      t.string:property
       t.integer:people
       t.integer:goal
       t.integer:budget
       t.integer:start
-      t.integer:weekday, default: 0
+      t.string:weekday
       t.integer:examination, default: 0
-      t.integer:aid, default: 0
+      t.string:aid
       t.integer:lastpassrate
       t.string :others
       t.integer:status, default: 0

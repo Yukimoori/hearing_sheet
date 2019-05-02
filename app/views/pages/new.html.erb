@@ -1,6 +1,6 @@
 <div class="container">
   <h2>ヒアリングシート</h2>
-  <p>その他以外の全てにチェックをいれてください。</p>
+  <p>※その他以外の全てにチェックをいれてください。</p>
   <br></br>
     <%= form_for @page do |f| %>
 
@@ -13,15 +13,15 @@
 
       <div class="form-group">
         <div class="haba">
-        <%= f.label :施策のご希望, class: "text-white" %>
-      </div>
-          <%= f.radio_button :tool, :training %>
+          <%= f.label :施策のご希望, class: "text-white" %>
+        </div>
+          <%= f.check_box :tool, {multiple: true}, "研修", nil %>
           <%= f.label :研修 %>
-          <%= f.radio_button :tool, :schooling %>
+          <%= f.check_box :tool, {multiple: true}, "スクーリング", nil %>
           <%= f.label :スクーリング %>
-          <%= f.radio_button :tool, :correspondence %>
+          <%= f.check_box :tool, {multiple: true}, "通信", nil %>
           <%= f.label :通信 %>
-          <%= f.radio_button :tool, :text %>
+          <%= f.check_box :tool, {multiple: true}, "教材提供", nil %>
           <%= f.label :教材提供 %>
       </div>
 
@@ -29,13 +29,13 @@
         <div class="haba">
           <%= f.label :対象者, class: "text-white" %>
         </div>
-          <%= f.radio_button :property, :nominee %>
+          <%= f.check_box :property, {multiple: true}, "内定者", nil %>
           <%= f.label :内定者 %>
-          <%= f.radio_button :property, :newemloyer %>
+          <%= f.check_box :property, {multiple: true}, "新入社員", nil %>
           <%= f.label :新入社員 %>
-          <%= f.radio_button :property, :employer %>
+          <%= f.check_box :property, {multiple: true}, "社員", nil %>
           <%= f.label :社員 %>
-          <%= f.radio_button :property, :other %>
+          <%= f.check_box :property, {multiple: true}, "その他", nil %>
           <%= f.label :その他 %>
       </div>
 
@@ -72,20 +72,20 @@
         <div class="haba">
           <%= f.label :実施曜日, class: "text-white" %>
         </div>
-          <%= f.radio_button :weekday, :mon %>
-          <%= f.label :月 %>
-          <%= f.radio_button :weekday, :tue %>
-          <%= f.label :火 %>
-          <%= f.radio_button :weekday, :wed %>
-          <%= f.label :水 %>
-          <%= f.radio_button :weekday, :tur %>
-          <%= f.label :木 %>
-          <%= f.radio_button :weekday, :fri %>
-          <%= f.label :金 %>
-          <%= f.radio_button :weekday, :sat %>
-          <%= f.label :土 %>
-          <%= f.radio_button :weekday, :sun %>
-          <%= f.label :日 %>
+        <%= f.check_box :weekday, {multiple: true}, "月", nil %>
+        <%= f.label :月 %>
+        <%= f.check_box :weekday, {multiple: true}, "火", nil %>
+        <%= f.label :火 %>
+        <%= f.check_box :weekday, {multiple: true}, "水", nil %>
+        <%= f.label :水 %>
+        <%= f.check_box :weekday, {multiple: true}, "木", nil %>
+        <%= f.label :木 %>
+        <%= f.check_box :weekday, {multiple: true}, "金", nil %>
+        <%= f.label :金 %>
+        <%= f.check_box :weekday, {multiple: true}, "土", nil %>
+        <%= f.label :土 %>
+        <%= f.check_box :weekday, {multiple: true}, "日", nil %>
+        <%= f.label :日 %>
       </div>
 
 
@@ -103,14 +103,14 @@
         <div class="haba">
           <%= f.label :取得支援, class: "text-white" %>
         </div>
-          <%= f.radio_button :aid, :nothing %>
-          <%= f.label :なし %>
-          <%= f.radio_button :aid, :aidtraining %>
-          <%= f.label :研修（社内・外） %>
-          <%= f.radio_button :aid, :incentive %>
-          <%= f.label :報奨金 %>
-          <%= f.radio_button :aid, :support %>
-          <%= f.label :取得補助 %>
+        <%= f.check_box :aid, {multiple: true}, "なし", nil %>
+        <%= f.label :なし %>
+        <%= f.check_box :aid, {multiple: true}, "研修（社内・外）", nil %>
+        <%= f.label :研修（社内・外） %>
+        <%= f.check_box :aid, {multiple: true}, "報奨金", nil %>
+        <%= f.label :報奨金 %>
+        <%= f.check_box :aid, {multiple: true}, "取得補助", nil %>
+        <%= f.label :取得補助 %>
       </div>
 
       <div class="form-group">
